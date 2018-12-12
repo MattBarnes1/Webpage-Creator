@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    </head>
+<body>
+
+
+
+
+<h1> A Simple Web Page Creator </h1>
+
+<table border="1" style="width:100%">
+    <tr>
+        <th>Item</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+    <tr>
+        <td>Open</td>
+        <td>Open the design window</td>
+        <td><button onclick="openWin()">Open</button></td>
+    </tr>
+    <tr>
+        <td>SetFont</td>
+        <td>Input your Font size <input type="number" value = "3" id="Font"></td>
+        <td><button onclick="setFontSize()">Set</button></td>
+    </tr>
+    <tr>
+        <td>Insert Grid</td>
+        <td>Input your Columns <input type="number" value = "3" id="Columns"></td>
+        <td>Input your Rows <input type="number" value = "3" id="Rows"></td>
+        <td><button onclick="InsertGrid()">Set</button></td>
+    </tr>
+    <tr>
+        <td>Insert Image</td>
+        <td>Input your ImageName <input type="text" value = "https://www.planwallpaper.com/static/images/magic-of-blue-universe-images.jpg" id="ImageName"></td>
+        <td><button onclick="InsertImage()">Set</button></td>
+    </tr>
+    <tr>
+        <td>Insert Link</td>
+        <td>Input your Link <input type="text" value = "www.google.com" id=Link></td>
+        <td>Input your Displayed Name <input type="text" value = "Google" id="Name"></td>
+        <td><button onclick="InsertLink()">Set</button></td>
+    </tr>
+    <tr>
+        <td>Insert Text</td>
+        <td>Input your Text <input type="text" value = "Inserted Text" id="myText"></td>
+        <td><button onclick="InsertText()">Set</button></td>
+    </tr>
+    <tr>
+        <td>Add Title</td>
+        <td>Input your Title <input type="text" value = "A super Title" id="Title"></td>
+        <td><button onclick="SetTitle()">Set</button></td>
+    </tr>
+    <tr>
+        <td>Add Progress Bar</td>
+        <td>Input your min value: <input type="number" value = "0" id="valuemin"></td>
+        <td>Input your max value: <input type="number" value = "100" id="valuemax"></td>
+        <td>Input your current value: <input type="number" value = "45" id="valuecurrent"></td>
+        <td><button onclick="CreateProgressBar()">Set</button></td>
+    </tr>
+    <tr>
+        <td>Add Video</td>
+        <td>Input your Video file: <input type="text" value = "A file" id="Videoname"></td>
+        <td>Input your Video file: <input type="text" value = "A file" id="VideoType"></td>
+        <td><button onclick="InsertVideo()">Set</button></td>
+    </tr>
+    <tr>
+        <td>Add Audio</td>
+        <td>Input your Audio file <input type="text" value = "A file" id="audiofile"></td>
+        <td><button onclick="addAudio()">Set</button></td>
+    </tr>
+    <tr>
+        <td>Insert Break</td>
+        <td><button onclick="InsertBreak()">Set</button></td>
+    </tr>
+    <tr>
+        <td>Set Background</td>
+        <td>Input your image <input type="text" value = "https://www.planwallpaper.com/static/images/magic-of-blue-universe-images.jpg" id="BackgroundImage"></td>
+        <td><button onclick="SetBackground()">Set</button></td>
+    </tr>
+    <tr>
+        <td>Set Header for a card</td>
+        <td>Input your image <input type="text" value = "Hi'" id="Header"></td>
+        <td>Input your image <input type="text" value = "or" id="Body"></td>
+        <td>Input your image <input type="text" value = "'A' = 'a" id="Footer"></td>
+        <td><button onclick="InsertCard()">Set</button></td>
+    </tr>
+    <tr>
+        <td>Insert Text Strikethrough</td>
+        <td>Input your Text: <input type="text" value = "Strike!" id="StrikeString"></td>
+        <td><button onclick="InsertStrikethroughText()">Set</button></td>
+    </tr>
+
+    <tr>
+        <td>Insert Text Underlined</td>
+        <td>Input your Text: <input type="text" value = "Underline" id="UnderlineString"></td>
+        <td><button onclick="InsertUnderlinedText()">Add</button></td>
+    </tr>
+    <tr>
+        <td>Insert Text Bold</td>
+        <td>Input your Text: <input type="text" value ="Bold" id="BoldString"></td>
+        <td><button onclick="InsertBoldedText()">Add</button></td>
+    </tr>
+    <tr>
+        <td>Insert Text Italics</td>
+        <td>Input your Text: <input type="text" value = "Italics" id="ItalicizedString"></td>
+        <td><button onclick="InsertItalicizedText()">Add</button></td>
+    </tr>
+    <tr>
+        <td>Insert Header</td>
+        <td>Input your Header h1...h6   h?: <input type="number" value = "1" id="HeaderNumber"></td>
+        <td>Input your Text: <input type="text" value = "WhatIsUnknown?" id="HeaderText"></td>
+        <td><button onclick="InsertHeader()">Add</button></td>
+    </tr>
+    <tr>
+        <td>Insert Jumbotron</td>
+        <td>Input your Jumbo Text: <input type="text" value = "A file" id="JumboString"></td>
+        <td><button onclick="InsertJumbotron()">Add</button></td>
+    </tr>
+    <tr>
+        <td>Insert IFrame</td>
+        <td>Input your frame width: <input type="number" value = "111" id="framewidth"></td>
+        <td>Input your frame height: <input type="number" value = "111" id="frameheight"></td>
+        <td>Input your frame page: <input type="text" value = "www.google.com" id="page"></td>
+        <td><button onclick="insertIFrame()">Add</button></td>
+    </tr>
+
+    <tr>
+        <td>Insert Marquee</td>
+        <td>Input your Marquee Text: <input type="text" value = "A file" id="MarqueeString"></td>
+        <td><button onclick="InsertMarquee()">Set</button></td>
+    </tr>
+
+    <tr>
+        <td>Close</td>
+        <td>Close the design window</td>
+        <td><button onclick="closeWindow()">Close</button></td>
+    </tr>
+</table>
+        <button onclick='window.open("http://www.w3schools.com/jsref/obj_window.asp")'>References</button>
+        <button onclick='window.open("http://www.w3schools.com/jsref/met_win_open.asp")'>Examples</button>
+        
+        <script>
+            // insertIFrame(width, height, page)
+            // InsertJumbotron(JumboTronInnerHTMLText)
+            // InsertHeader(HeaderNumber, Stuff)
+            //InsertItalicizedText(Text)
+// InsertUnderlinedText(Text)
+
+
+        var page = "<p>ISP PA3</p>";
+        var myWindow = null;
+        
+        function openWin() {
+	    if(myWindow != null) myWindow.close();
+            myWindow = window.open("", "ISP PA3", "width=800,height=168");
+            myWindow.document.write(page);
+            if(Title != null)
+            {
+                myWindow.document.title = Title;
+            }
+            if(myWindow.document.body != null)
+            {
+                var attributes = myWindow.document.body.attributes;
+                myWindow.document.body.style.background = BackgroundImage;
+                myWindow.document.body.backgroundPosition = "center";
+            myWindow.document.head.innerHTML = "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">"+
+        "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\">" + "<//script>" +
+        "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"><//script>"; 
+            }
+            
+        }
+        
+        var myScrollTrueFalse;
+        function backgroundShouldScroll(scroll)
+        {
+            myScrollTrueFalse = scroll;
+        }
+
+
+        function setError(ErrorString)
+        {
+            var attributes = document.getElementById("ErrorLabel").value;;
+            attributes.innerText = ErrorString;
+        } 
+
+        function addAudio()
+        {
+            var FileName = document.getElementById("audiofile").value;;
+             Insertion("<audio src=\"" + FileName + "\"controls = \"controls\"></audo>")   
+        }
+
+        function insertIFrame()
+        {
+            var width = document.getElementById("framewidth").value;
+            var height = document.getElementById("frameheight").value;
+            var apage = document.getElementById("page").value;
+                Insertion("<iframe src=\""+apage+ "\" width=" + width + "\" height= \"" + height + "\"></iframe>"); 
+        }
+
+
+        function InsertMarquee()
+        {
+            MarqueeString = document.getElementById("MarqueeString").value;
+            Insertion("<marquee>"+ MarqueeString + "</marquee>");
+        }
+
+        function InsertJumbotron()
+        {
+            aString = document.getElementById("JumboString").value;
+            if(GridObject.length != 0)
+            {
+                SetError("");
+            } else {
+            Insertion("<div class=\"jumbotron text-center\">"+ aString + 
+            "</div>");
+            }
+        }
+
+        function InsertHeader()
+        {
+            HeaderNumber = document.getElementById("HeaderNumber").value;
+            Stuff = document.getElementById("JumboString").value;
+            Insertion("<h" + HeaderNumber + ">" + Stuff + "<h" + HeaderNumber + ">");;
+        }
+        
+        function InsertItalicizedText()
+        {
+            HeaderNumber = document.getElementById("ItalicizedString").value;;
+            Insertion("<em>" + HeaderNumber + "</em>");
+        }
+
+        function InsertBoldedText()
+        {
+            HeaderNumber = document.getElementById("BoldString").value;;
+            Insertion("<b>" + HeaderNumber + "</b>");
+        }
+        
+        function InsertUnderlinedText()
+        {
+            HeaderNumber = document.getElementById("UnderlineString").value;;
+            Insertion("<ins>" + HeaderNumber + "</ins>");
+        }
+
+        function InsertStrikethroughText()
+        {
+            HeaderNumber = document.getElementById("StrikeString").value;;
+            Insertion("<del>" + HeaderNumber + "</del>");
+        }
+
+        function InsertCard()
+        {
+            Header = document.getElementById("Header").value;;
+            Body = document.getElementById("Body").value;;
+            Footer = document.getElementById("Footer").value;;
+            Insertion("<div class=\"card\">"+
+            "<div class=\"card-header\">"+ Header + "</div>"+
+            "<div class=\"card-body\">" + Body + "</div>" +
+            "<div class=\"card-footer\">"+ Footer + "</div></div>");
+        }
+
+        function InsertBreak()
+        {
+            Insertion("<br />");
+        }
+
+        var backgroundImages;
+        function SetBackground(){
+            var backgroundImages = document.getElementById("BackgroundImage");
+        }
+
+        function InsertVideo()
+        {
+            var Videoname = document.getElementById("Videoname").value;;
+            var  videofiletype = document.getElementById("VideoType").value;;
+            Insertion("<video width=\"320\" height=\"240\" controls>\n"+
+            "<source src=\""+ Videoname+"\" type=\"video/"+videofiletype + "\">" +
+            "Your browser does not support the video tag.</video>"); 
+        }
+
+        function CreateProgressBar(valuemin, valuemax, valuecurrent)
+        {
+            var   valuemin = document.getElementById("valuemin").value;;
+            var valuemax = document.getElementById("valuemax").value;;
+            var valuecurrent = document.getElementById("valuecurrent").value;;
+            Insertion("<div class=\"progress\"><div class=\"progress-bar\" role=\"progressbar\"" +
+            "aria-valuenow=\"70\" +  aria-valuemin=\"" + valuemin + " aria-valuemax=\""+ valuemax + "\" style=\"width:70%\"> " +
+            "<span class=\"sr-only\"></span>" + "</div></div>");   
+        }
+
+
+        function InsertText()
+        {
+            var myText = document.getElementById("myText").value;;
+            Insertion(myText);
+        }
+
+        function InsertLink()
+        {
+            var Name = document.getElementById("Name").value;;
+            var  Link = document.getElementById("Link").value;;
+            if(Name == null)
+            {
+                Insertion("<a href=\"" + Link + "\" />");
+            }
+            else {
+                Insertion("<a href=\"" + Link + "\">" + Name + "</a>");
+            }
+        }
+
+        function InsertImage()
+        {
+            var Name = document.getElementById("ImageName").value;;
+            Insertion("<img src=\"" + Name + "\"/>");
+        }
+
+        var GridObject = [];
+        var lastGrid = -1;
+        function InsertGrid()
+        {
+            var Columns = document.getElementById("Columns").value;
+            var Rows = document.getElementById("Rows").value;
+            var GridPosition = [];
+            page += "<div class=\"container\">";
+            for(i = 0 ; i < Rows; i++)
+            {
+                page += "\n<div class=\"row\">";
+                    var ColumnGrid = [];
+                    for (x = 0; x < Columns; x++)
+                    {
+                        page +="<div class=\"col-*-*\">";
+                        ColumnGrid.push(page.length);
+                        page +="</div>";
+                    }
+                page += "\n</div>";
+                GridPosition.push(ColumnGrid);
+            }
+            page += "</div>";
+            GridObject.push(GridPosition);
+            lastGrid = GridObject.length;
+        }
+
+
+
+        function InsertIntoPageString(Element, aPosition)
+        {
+            var beforeMe = page.substr(0, aPosition);   
+            var  afterMe = page.substr(aPosition,page.length);   
+            page = beforeMe + Element + afterMe;
+        }
+
+        function Insertion(stringToInsert)
+        {
+                if(GridObject.length == 0)
+                {
+                    page += stringToInsert;
+                } else {
+                    var Grid = GridObject.pop();
+                    var Row = Grid.pop();
+                    var ColumnPosition = Row.pop();
+                    InsertIntoPageString(stringToInsert, ColumnPosition);
+                    if(Row.length == 0)
+                    {
+                        if(Grid.length == 0)
+                        {
+                            return; //empty column
+                        } else {
+                            GridObject.push(Grid)
+                        }
+                        return;
+                    }
+                    else
+                    {
+                        Grid.push(Row);
+                        GridObject.push(Grid)
+                    }
+                }
+        }
+
+        function setFontSize()
+        {
+            var size = document.getElementById("Font").value;
+            Insertion("<font size=\""+size+"\" />")
+        }
+
+var Title;
+        function SetTitle()
+        {
+            Title = document.getElementById("Title").value;
+            var i = 0;
+        }
+
+        function addButton() {
+            Insertion("<button>A do nothing button</button>")
+        }
+       
+        function closeWindow() {
+            myWindow.close();
+        }
+ 
+        </script>
+ 
+ <h2> Features </h2>
+
+        <table border="1" style="width:100%">
+            <tr>
+                <th>HTML</th>
+                <th>CSS</th>
+                <th>JavaScript</th>
+                <th>XML</th>
+                <th>Others</th>
+            </tr>
+            <tr>
+                <th>SetTitle</th>
+                <th>Insert Tables</th>
+                <th>Insert Jumbotron</th>
+                <th>InsertGrid </th>
+                <th>InsertImage</th>
+            </tr>
+            <tr>
+                <th>InsertLink</th>
+                <th>InsertText</th>
+                <th>CreateProgressBar</th>
+                <th>InsertVideo</th>
+                <th>InsertBreak</th>
+            </tr>
+            <tr>
+                <th>SetBackground</th>
+                <th>InsertCard</th>
+                <th>InsertStrikethroughText </th>
+                <th>InsertUnderlinedText</th>
+                <th>InsertBoldedText</th>
+            </tr>
+            <tr>
+                <th>InsertItalicizedText</th>
+                <th>InsertHeader</th>
+                <th>InsertJumbotron </th>
+                <th>insertIFrame</th>
+                <th>InsertMarquee</th>
+            </tr>
+            <tr>
+                <th>addAudio</th>
+            </tr>
+        </table>
+        
+        
+    </body>
+</html>
+
